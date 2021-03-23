@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import { ui } from './ui'
+
 // reducer
 export const products = createSlice({
   name: 'products',
@@ -17,6 +19,7 @@ export const products = createSlice({
 // thunk
 export const fetchProducts = () => {
   return (dispatch) => {
+    dispatch(ui.actions.setLoading(true))
     fetch('https://falconx-development.coffee4tech.net/products/public?country=GB')
       .then((res) => {
         if (res.ok) {
@@ -27,6 +30,7 @@ export const fetchProducts = () => {
       })
       .then((json) => {
         dispatch(products.actions.setProducts({ allProducts: json.docs }))
+        dispatch(ui.actions.setLoading(false))
       })
   }
 }
