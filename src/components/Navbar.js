@@ -8,19 +8,26 @@ import './Navbar.css'
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const products = useSelector((store) => store.cart.items)
+  const totalPrice = useSelector((store) => (
+    store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+  ))
 
   return (
-    <div className="navbar__wrapper">
+    <header className="navbar__wrapper">
       <Cart open={open} setOpen={setOpen} />
       {open && (
-        <div className="navbar__menu">
-          <ul className="items">
+        <div className="cart__menu">
+          <ul className="cart__items">
             {products.map((product) => (
               <CartProducts key={product.id} product={product} />
             ))}
           </ul>
+          <div className="cart__sum">
+            <p className="quantity">Total</p>
+            <p className="quantity">£{totalPrice}</p>
+          </div>
         </div>
       )}
-    </div>
+    </header>
   )
 }

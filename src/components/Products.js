@@ -16,7 +16,7 @@ export const Products = () => {
   }, [dispatch])
 
   return (
-    <div className="products__card-content">
+    <div className="products__card">
       {allProducts.map((product) => (
         <Product key={product.id} product={product} />
       ))}

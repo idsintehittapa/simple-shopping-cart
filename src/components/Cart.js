@@ -1,15 +1,15 @@
 import React from 'react'
-import './Navbar.css'
+import '../index.css'
 
 export const Cart = ({ open, setOpen }) => {
 
   return (
-    <header>
+    // <header>
       <div>
         <button className="cart__button" type="button">
-          <span className="cart__emoji" role="img" aria-label="cart" open={open} onClick={() => setOpen(!open)}>🛒</span>
+          <ul><span className="cart__emoji" role="img" aria-label="cart" open={open} onClick={() => setOpen(!open)}>🛒</span></ul>
         </button>
       </div>
-    </header>
+    // </header>
   )
 }
