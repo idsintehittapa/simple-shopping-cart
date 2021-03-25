@@ -13,7 +13,9 @@ export const Cart = ({ open, setOpen }) => {
         type="button"
         open={open}
         onClick={() => setOpen(!open)}
-        disabled={numItems === 0}>
+        // as I am unsure what logic we want here, it's now:
+        // we check if the cart is closed before disabling it, otherwise it can't be closed
+        disabled={numItems === 0 && !open}>
         <ul>
           <span className="cart__emoji" role="img" aria-label="cart">🛒 <span className="cart__emoji-items">{numItems}</span></span>
         </ul>
