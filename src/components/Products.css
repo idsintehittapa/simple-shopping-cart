@@ -13,6 +13,8 @@
 .products__card-content {
   padding: 20px;
   height: 30rem;
+  /* I hardcoded the height of the cards since I was unsure about the layout when content
+  was different */
 }
 
 .products__card-content {
