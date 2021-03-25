@@ -6,7 +6,7 @@ export const LoadingIndicator = () => {
 
   return (
     <>
-      {isLoading && <div> LOADING</div>}
+      {isLoading && <div className="loading__spinner"> LOADING</div>}
     </>
   )
 }

@@ -1,15 +1,23 @@
 import React from 'react'
-import '../index.css'
+import { useSelector } from 'react-redux'
 
 export const Cart = ({ open, setOpen }) => {
+  const numItems = useSelector((store) => (
+    store.cart.items.reduce((total, item) => (total + item.quantity), 0)
+  ))
 
   return (
-    // <header>
-      <div>
-        <button className="cart__button" type="button">
-          <ul><span className="cart__emoji" role="img" aria-label="cart" open={open} onClick={() => setOpen(!open)}>🛒</span></ul>
-        </button>
-      </div>
-    // </header>
+    <div>
+      <button
+        className="cart__button"
+        type="button"
+        open={open}
+        onClick={() => setOpen(!open)}
+        disabled={numItems === 0}>
+        <ul>
+          <span className="cart__emoji" role="img" aria-label="cart">🛒 <span className="cart__emoji-items">{numItems}</span></span>
+        </ul>
+      </button>
+    </div>
   )
 }
