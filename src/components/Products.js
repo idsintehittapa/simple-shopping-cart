@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProducts } from '../reducers/products'
 
 import { Product } from './Product'
-
 import './Products.css'
 
 export const Products = () => {

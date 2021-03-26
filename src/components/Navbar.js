@@ -23,8 +23,8 @@ export const Navbar = () => {
             ))}
           </ul>
           <div className="cart__sum">
-            <p className="quantity">Total</p>
-            <p className="quantity">£{totalPrice}</p>
+            <p>Total</p>
+            <p>£{totalPrice}</p>
           </div>
         </div>
       )}

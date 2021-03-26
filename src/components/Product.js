@@ -1,8 +1,8 @@
 
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { cart } from '../reducers/cart'
 
+import { cart } from '../reducers/cart'
 import './Products.css'
 
 export const Product = ({ product }) => {

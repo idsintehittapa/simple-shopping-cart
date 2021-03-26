@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import { ui } from './ui'
 
-// reducer
 export const products = createSlice({
   name: 'products',
   initialState: {
@@ -17,6 +16,7 @@ export const products = createSlice({
 })
 
 // thunk
+// I created a thunk so I could also implement a loading indicator for UX/UI purposes
 export const fetchProducts = () => {
   return (dispatch) => {
     dispatch(ui.actions.setLoading(true))

@@ -10,7 +10,7 @@ export const CartProducts = ({ product }) => {
       <li className="products__cart">
         <div className="products__cart-grid">
           <p className="products__cart__name-title">{product.name} </p>
-          <div className="products__quantity">
+          <div className="products__cart-quantity">
             <button type="button" onClick={() => dispatch(cart.actions.removeItem(product))}>-</button>
             <span>{product.quantity}</span>
             <button type="button" onClick={() => dispatch(cart.actions.addItem(product))}>+</button>
